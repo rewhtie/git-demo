@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+	<title>canvas太极图</title>
+
+</head>
+<body>
+<canvas id="canvas" width="800" height="700">您的浏览器不支持html5的canvas元素
+</canvas><!-- 定义一块画布 -->
+<script type="text/javascript">
+var canvas=document.getElementById('canvas');
+var c=canvas.getContext('2d');
+x4=c.createRadialGradient(400,200,1,400,200,10)
+x4.addColorStop(0,"white")
+x4.addColorStop(1,"Black")
+
+x3=c.createRadialGradient(400,400,1,400,400,10)
+x3.addColorStop(0,"Black")
+x3.addColorStop(1,"white")
+
+x2=c.createLinearGradient(400,100,400,500)
+x2.addColorStop(0,"white")
+x2.addColorStop(1,"Black")
+
+x=c.createLinearGradient(400,100,400,500)
+x.addColorStop(0,"Black")
+x.addColorStop(1,"white")
+
+c.fillStyle=x;
+c.arc(400,300,200,Math.PI/2,Math.PI*1.5)
+c.arc(400,200,100,Math.PI/2,Math.PI*1.5,true)
+c.arc(400,400,100,Math.PI*1.5,Math.PI/2,true)
+c.fill()
+
+c.beginPath();
+
+c.fillStyle=x2;
+c.arc(400,300,200,Math.PI/2,Math.PI*1.5,true)
+c.arc(400,400,100,Math.PI/2,Math.PI*1.5)
+c.arc(400,200,100,Math.PI*1.5,Math.PI/2)
+c.fill()
+
+c.beginPath()
+
+c.fillStyle=x3;
+c.arc(400,400,10,0,Math.PI*2)
+c.fill()
+
+c.beginPath()
+
+c.fillStyle=x4;
+c.arc(400,200,10,0,Math.PI*2)
+c.fill()
+
+</script>
+</body>
+</html>
